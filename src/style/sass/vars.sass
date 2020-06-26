@@ -1,0 +1,45 @@
+$accent-color_1: #22576C
+$accent-color_2: #2092C2
+$white: #ffffff
+$font-light-color: #A6B5BB
+
+$bg-color-light: #F5F7F8
+
+$default-font: 'Inter', sans-serif
+$default-transition: .35s
+$default-opacity: .8
+
+*, body, html 
+	margin: 0
+	padding: 0
+	font-family: $default-font
+	box-sizing: border-box
+
+html, body
+	min-width: 320px
+	font-weight: 500
+	font-style: normal
+	color: $accent-color_1
+	background-color: $white
+
+html
+	height: 100%
+	scroll-behavior: smooth
+
+body 
+	position: relative
+	height: auto
+	// overflow: hidden
+
+button,
+input,
+textarea,
+select
+	outline: none
+	border-radius: 0
+	-moz-appearance: none
+  -webkit-appearance: none
+  +prefix(appearance, none)
+
+a
+	text-decoration: none

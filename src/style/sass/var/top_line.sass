@@ -1,0 +1,148 @@
+.top-line
+	padding: 17px 15px 18px 15px
+	background-color: $accent-color_1
+
+	&-wrap
+		+flex
+		margin: 0 auto
+		with: 100%
+		max-width: 1055px
+		+justify-content(space-between)
+		+align-items(center)
+	
+	&-logo
+		display: inline-block
+		margin:
+			top: 5px
+		width: 100%
+		min-width: 110px
+		max-width: 110px
+		+prefix(transition, $default-transition)
+
+		&:hover
+			opacity: $default-opacity
+
+		&-img
+			width: 100%
+	
+	&-form
+		+flex
+		margin: 0 10px
+		border-radius: 5px
+		overflow: hidden
+
+		&-btn
+			padding: 9px 18px
+			width: 100%
+			max-width: 88px
+			font-size: 15px
+			font-weight: 600
+			line-height: 18px
+			color: #F5F5F5
+			border: 2px solid transparent
+			background-color: $accent-color_2
+			cursor: pointer
+			border-top-right-radius: 5px
+			border-bottom-right-radius: 5px
+			+prefix(transition, $default-transition)
+
+			&:hover
+				background-color: $accent-color_1
+				border-color: $accent-color_2
+
+	&-input
+		padding: 11px 15px
+		width: 100%
+		min-width: 430px
+		max-width: 430px
+		font-size: 15px
+		font-weight: 600
+		line-height: 18px
+		color: $accent-color_1
+		border: 0
+		background-color: #2F6981
+		+prefix(transition, $default-transition)
+
+		&:focus,
+		&:active
+			background-color: $white
+		
+		+placeholder()
+			color: #6B94A4
+	
+	&-buttons
+		+flex
+
+	&-btn
+		+flex
+		position: relative
+		margin: 0 15px
+		font-size: 15px
+		font-weight: 600
+		color: $white
+		cursor: pointer
+		+prefix(transition, $default-transition)
+		z-index: 11
+
+		&:last-child
+			margin:
+				right: 0
+		
+		&:hover
+			opacity: $default-opacity
+
+		&-img
+			margin:
+				right: 10px
+
+	&-language
+		position: relative
+
+		&:hover
+			.top-line-language-dropdown
+				display: block
+
+		&-dropdown
+			display: none
+			position: absolute
+			padding:
+				top: 40px
+			top: 0
+			left: 32px
+			width: 100%
+			max-width: 110px
+			z-index: 10
+
+			&-wrap
+				position: relative
+				padding: 10px 20px
+				width: 100%
+				background-color: $white
+				border-radius: 8px
+				+box-shadow(0px 6px 20px rgba(0, 0, 0, 0.1))
+
+				&::before
+					content: ''
+					display: block
+					position: absolute
+					top: -6px
+					left: 20px
+					width: 12px
+					height: 12px
+					background-color: $white
+					+prefix(transform, rotate(45deg))
+			
+		&-link
+			display: inline-block
+			font-size: 14px
+			font-weight: 600
+			line-height: 32px
+			color: $accent-color_1
+			+prefix(transition, $default-transition)
+
+			&:hover
+				color: $accent-color_2
+			
+			&:last-child
+				margin: 0
+
