@@ -1,0 +1,138 @@
+.main-wrapper
+	include ../var/sidebar.pug
+
+	.wrapper
+		.wrapper-box
+			.breadcrumbs
+				a(href="").breadcrumbs-elem Главная 
+				a(href="").breadcrumbs-elem Из фильмов 
+			
+			.video-wrap
+				button(onclick="play_pause()").video-play-btn
+				video(width="100" controls).video#video
+					source(src="style/img/postmalone.mp4")
+			.video-name Primals Taboo Sex - Richelle Ryan - Mom Does It Better Part 2
+			.video-info
+				.video-info-elem
+					.video-info-name Категория:
+					a(href="").video-info-value.link Из фильмов
+				.video-info-elem
+					.video-info-name Добавлено:
+					.video-info-value 04.03.2020 / 12:13
+			.video-control
+				.video-control-elem.video-share
+					svg(width="14" height="17" viewBox="0 0 14 17" fill="none" xmlns="http://www.w3.org/2000/svg").video-control-icon
+						path(d="M13 7.95122V16H1V7.95122M7 10.6951V1.18292M4 4.10437L6.99481 1L9.81314 4.10437" stroke="#22576C" stroke-width="1.8" stroke-linejoin="round")
+					span.video-control-text Поделиться
+					.video-dropdown-wrap.video-share-dropdown-wrap
+						.video-dropdown.video-share-dropdown
+							a(href="#").video-share-dropdown-social.vk-link
+							a(href="#").video-share-dropdown-social.tw-link
+							a(href="#").video-share-dropdown-social.fb-link
+							a(href="#").video-share-dropdown-social.od-link
+							a(href="#").video-share-dropdown-copy
+								| Скопировать ссылку
+				.video-control-elem.video-download
+					svg(width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg").video-control-icon
+						path(d="M12.736 7.65576L8.29589 11.8316C8.17905 11.9476 7.94536 11.9476 7.82852 11.8316L3.27161 7.65576" stroke="#22576C" stroke-width="1.5" stroke-miterlimit="10" stroke-linejoin="round")
+						path(d="M8.06226 0V7.42382V11.8317" stroke="#22576C" stroke-width="1.5" stroke-miterlimit="10" stroke-linejoin="round")
+						path(d="M0 16.0381H16.0076" stroke="#22576C" stroke-width="1.5" stroke-miterlimit="10" stroke-linejoin="round")
+					span.video-control-text Скачать
+					.video-dropdown-wrap.video-download-dropdown-wrap
+						.video-dropdown.video-download-dropdown
+							a(href="").video-download-link MP4 HD 576x432, 101.66 Мб
+							a(href="").video-download-link MP4 HD 640x360, 98.5 Мб
+							a(href="").video-download-link MP4 SD 320x180, 51.44 Мб
+							a(href="").video-download-link 3GP SD 176x144, 28.24 Мб
+				.video-control-elem.video-save
+					svg(width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg").video-control-icon.video-control-icon-fill
+						path(d="M9 3L10.5716 7.83688H15.6574L11.5429 10.8262L13.1145 15.6631L9 12.6738L4.8855 15.6631L6.4571 10.8262L2.3426 7.83688H7.4284L9 3Z" stroke="#22576C" stroke-width="1.5" stroke-miterlimit="10")
+					span.video-control-text Сохранить
+				.video-control-elem.video-like
+					svg(width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg").video-control-icon.video-control-icon-fill
+						path( d="M8.5 15C0.462879 9.41379 1.00777 5.48276 1.00777 5.48276C1.00777 3 2.98299 1 5.435 1C6.59289 1 7.68267 1.48276 8.5 2.24138C9.31734 1.48276 10.339 1 11.565 1C14.017 1 15.9922 3 15.9922 5.48276C15.9922 5.48276 16.5371 9.41379 8.5 15Z" stroke="#22576C" stroke-width="1.8" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round")
+					span.video-control-text 35 247
+
+			.comment
+				.comment-title 12 Комментариев
+				form(action="").comment-form
+					textarea(type="text" placeholder="Ваш комментарий").comment-input
+					button.default-btn Оставить комментарий
+			
+				.comment-section
+					.comment-elem
+						.comment-img-box
+							img(src="", alt="")
+						.comment-info
+							.comment-title
+								.comment-name muxammsd m.
+								.comment-date 6 июн 2020
+							.comment-text
+								| Фильм отличный но эти рекламы на нервы действует
+					.comment-elem
+						.comment-img-box
+							img(src="style/img/comment-ph.jpg", alt="")
+						.comment-info
+							.comment-title
+								.comment-name Алексей С.
+								.comment-date 3 ноя 2019
+							.comment-text
+								| не было бы рекламы за фильмы пришлось бы платить
+					.comment-elem
+						.comment-img-box
+							img(src="", alt="")
+						.comment-info
+							.comment-title
+								.comment-name Виктор Арсеев
+								.comment-date 25 ноя 2019
+							.comment-text
+								|  Есть немало ресурсов, где и фильмы в хорошем 
+								| качестве, и реклама только в начале. Совсем 
+								| без рекламы и бесплатно - это торрент.
+					
+			.wrapper-recommend
+				.wrapper-title Вам может понравиться
+				.media
+					a(href="").media-elem
+						.media-img-box
+							.media-info.hd HD
+							.media-info.time 02:57
+							img(src="style/img/preview/preview-1.jpg", alt="").media-img
+						.media-name AniDub Bleach Блич - 268 серия (Озвучка от Ancord)
+					a(href="").media-elem
+						.media-img-box
+							.media-info.hd HD
+							.media-info.time 02:57
+							img(src="style/img/preview/preview-2.jpg", alt="").media-img
+						.media-name AniDub Bleach Блич - 268 серия 
+					a(href="").media-elem
+						.media-img-box
+							.media-info.hd HD
+							.media-info.time 02:57
+							img(src="style/img/preview/preview-3.jpg", alt="").media-img
+						.media-name AniDub Bleach Блич - 268 серия (Озвучка от Ancord)
+				.show-more
+					a(href="").show-more-btn
+						.show-more-text Показать больше
+						svg(width="13" height="7" viewBox="0 0 13 7" fill="none" xmlns="http://www.w3.org/2000/svg").show-more-arrow
+							path(d="M1.6001 1L6.74433 5L11.6001 1" stroke="#2092C2" stroke-width="2" stroke-miterlimit="10")
+
+		include ../var/footer.pug
+
+script. 
+	video = document.getElementById('video');
+	play_pause_status = "play";
+	video.controls = false; 
+
+	function play_pause() {
+		if (play_pause_status == "pause") {
+			video.play();
+			play_pause_status = "play";
+			$('.video-play-btn').fadeOut();
+			video.controls = true; 
+		}
+		else {
+			video.pause();
+			play_pause_status = "pause";
+		}
+	}

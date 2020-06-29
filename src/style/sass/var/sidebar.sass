@@ -1,0 +1,54 @@
+.sidebar
+	&-elem
+		margin:
+			bottom: 10px
+		padding: 15px 22px
+		max-width: 200px
+		background-color: $bg-color-light	
+		border-radius: 5px
+
+		&:last-child
+			margin: 0
+
+		&.sidebar-genres
+			.sidebar-link
+				+align-items(center)
+		
+	&-title
+		font-size: 15px
+		font-weight: 700
+		line-height: 35px
+
+	&-link
+		+flex
+		margin:
+			bottom: 15px
+		font-size: 14px
+		font-weight: 600
+		line-height: 22px
+		color: $accent-color_1
+		+prefix(transition, $default-transition)
+
+		&:last-child 
+			margin: 0
+
+		&:not(.active):hover
+			opacity: $default-opacity
+
+		&.active
+			color: $accent-color_2
+
+			.sidebar-icon
+				path
+					fill: $accent-color_2
+
+	&-icon
+		margin:
+			right: 12px
+		width: 18px
+
+		path
+			+prefix(transition, $default-transition)
+	
+
+	

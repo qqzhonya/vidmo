@@ -1,0 +1,27 @@
+.footer
+	+flex
+	margin:
+		top: auto
+	-webkit-box-flex: 0
+	-ms-flex: 0 0 auto
+	flex: 0 0 auto
+
+	&-elem
+		margin:
+			right: 10px
+		font-size: 14px
+		color: $font-light-color
+
+		&:last-child
+			margin: 0
+
+		&.footer-link
+			color: $accent-color_1
+		
+		&.footer-mail
+			color: $accent-color_2
+		
+		&.footer-link,
+		&.footer-mail
+			&:hover
+				text-decoration: underline
