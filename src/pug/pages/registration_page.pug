@@ -1,0 +1,38 @@
+.main-wrapper
+	include ../var/sidebar.pug
+
+	.wrapper
+		.wrapper-box
+			.breadcrumbs
+				a(href="").breadcrumbs-elem Главная 
+				a(href="").breadcrumbs-elem Войти
+				a(href="").breadcrumbs-elem Регистрация
+			
+			.wrapper-row
+				.wrapper-heading
+					span Регистрация
+			
+			.wrapper-row.wrapper-form
+				form(action="").main-form
+					.main-form-input-wrap
+						input(type="text" name="Usename" placeholder="Логин*" required minlength="3").main-form-input.formUsername
+					.main-form-input-wrap
+						input(type="password" name="Password" placeholder="Пароль*" minlength="4" required).main-form-input.formPassword
+					.main-form-input-wrap
+						input(type="email" name="Email" placeholder="Email").main-form-input.formEmail
+					.main-form-btn-wrap
+						button.main-form-btn 
+							span Зарегистрироваться
+						.main-form-link-wrap
+							a(href="login_page.html").main-form-link Уже есть аккаунт?
+				
+				.main-form-note
+					p 
+						span * 
+						| Логин длиной 3 и более символов. Разрешены знаки латинского 
+						| алфавита и цифры. в логине запрещены только цифры и русские буквы.
+					p 
+						| Email может понадобиться для восстановления пароля в случае утери. 
+						| Рекомендуем указать.
+
+		include ../var/footer.pug

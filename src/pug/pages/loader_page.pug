@@ -1,0 +1,38 @@
+.main-wrapper
+	include ../var/sidebar.pug
+
+	.wrapper
+		.wrapper-box
+			.breadcrumbs
+				a(href="").breadcrumbs-elem Главная 
+				a(href="").breadcrumbs-elem Найти
+
+			.wrapper-row
+				.loader.search
+					.loader-icon
+					.loader-description Ваш запрос на поиск находиться в обработке
+					.loader-description Резельтаты поиска будут доступны в течении нескольких секунд
+					.default-btn.loader-btn Обновить страницу
+			
+			.wrapper-row
+				.loader.preparation
+					.loader-value 100%
+					.loader-progress
+						.loader-progress-bar
+					.loader-title Данный файл подготавливается
+					.loader-description Ваш запрос на поиск находиться в обработке
+					.loader-description Резельтаты поиска будут доступны в течении нескольких секунд
+					.default-btn.loader-btn Обновить страницу
+			
+			.wrapper-row
+				.loader.generation
+					.loader-value 100%
+					.loader-progress
+						.loader-progress-bar
+					.loader-title Идет генерация видео 
+						span.lodaer-title-name MP4 340x360
+					.loader-description Ваш запрос на поиск находиться в обработке
+					.loader-description Резельтаты поиска будут доступны в течении нескольких секунд
+					.default-btn.loader-btn Обновить страницу
+
+		include ../var/footer.pug

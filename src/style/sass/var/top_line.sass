@@ -73,6 +73,7 @@
 	
 	&-buttons
 		+flex
+		+align-items(center)
 
 	&-btn
 		+flex
@@ -102,12 +103,34 @@
 		&:hover
 			.top-line-language-dropdown
 				display: block
+			
+			.top-line-language-text:after
+				+prefix(transform, rotate(180deg))
+
+		&-text
+			position: relative
+			padding:
+				right: 20px
+
+			&:after
+				content: ''
+				display: block
+				position: absolute
+				top: 8px
+				right: 0
+				width: 11px
+				height: 5px
+				background-image: url(../img/icon/arrow-down-wht-icon.svg)
+				background-size: cover
+				background-position: center center
+				background-repeat: no-repeat
+				+prefix(transition, $default-transition)
 
 		&-dropdown
 			display: none
 			position: absolute
 			padding:
-				top: 40px
+				top: 35px
 			top: 0
 			left: 32px
 			width: 100%
@@ -147,3 +170,79 @@
 			&:last-child
 				margin: 0
 
+	&-login
+		display: none
+
+	&-account
+		position: relative
+		margin:
+			right: 20px
+		width: 33px
+		height: 33px
+		background-image: url(../img/icon/person-tl-icon.svg)
+		background-size: cover
+		background-position: center center
+		background-repeat: no-repeat
+		cursor: pointer
+
+		&::after
+			content: ''
+			position: absolute
+			margin:
+				top: -3px
+			top: 50%
+			right: -20px
+			width: 11px
+			height: 5px
+			background-image: url(../img/icon/arrow-down-acc-icon.svg)
+			background-size: cover
+			background-position: center center
+			background-repeat: no-repeat
+			+prefix(transition, $default-transition)
+		
+		&:hover
+			.top-line-account-dropdown-wrap
+				display: block
+			
+			&::after
+				+prefix(transform, rotate(180deg))
+
+		&-dropdown-wrap
+			display: none
+			position: absolute
+			padding:
+				top: 45px
+			top: 0
+			right: -10px
+			z-index: 20
+
+		&-dropdown
+			display: block
+			position: relative
+			padding: 10px 20px
+			background-color: $white
+			background-color: $white
+			border-radius: 8px
+			+box-shadow(0px 6px 20px rgba(0, 0, 0, 0.1))
+
+			&::before
+				content: ''
+				display: block
+				position: absolute
+				top: -6px
+				right: 19px
+				width: 12px 
+				height: 12px
+				background-color: $white
+				+prefix(transform, rotate(45deg))
+
+			&-link
+				display: block
+				font-size: 14px
+				font-weight: 600
+				line-height: 28px
+				color: $accent-color_1
+				+prefix(transition, $default-transition)
+
+				&:hover
+					color: $accent-color_2

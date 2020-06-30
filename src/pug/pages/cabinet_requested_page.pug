@@ -1,0 +1,33 @@
+.main-wrapper
+	include ../var/sidebar.pug
+
+	.wrapper
+		.wrapper-box
+			.cabinet-header
+				.cabinet-img-box
+					img(src="", alt="").cabinet-img
+					.userphoto-change
+						input(type="file" accept="image/*").userphoto-change-input 
+				.cabinet-info
+					.cabinet-name Arthur Designer
+					.cabinet-email asorsorian@gmail.com
+					a(href="").cabinet-change-pass Сменить пароль
+			
+			.cabinet-tab
+				a(href="").cabinet-tab-elem Избранные
+				a(href="").cabinet-tab-elem.active Запрошенные
+				a(href="").cabinet-tab-elem Скачанные
+			
+			.cabinet-text
+				p
+					| На данной странице показываются последние 
+					| 100 видео-файлов, которые были запрошены вами 
+					| на скачивание или конвертацию
+				p
+					| Видео попадают в список автоматически. Например, 
+					| вы можете запросить скачивание видео-файла, или 
+					| его конвертацию и уйти не дожидаясь завершения 
+					| процесса. Затем в любое время, на данной странице, 
+					| вы сможете найти запрошенный видео-файл.
+			
+		include ../var/footer.pug

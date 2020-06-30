@@ -101,6 +101,19 @@ a
 					path
 						stroke: $accent-color_1
 
+	&-heading
+		+flex
+		margin:
+			bottom: 25px
+		font-size: 28px 
+		font-weight: 700
+		color: $accent-color_1
+		+align-items(center)
+
+		span 
+			margin:
+				right: 20px
+
 	&-row
 		margin:
 			bottom: 20px
@@ -113,6 +126,83 @@ a
 			font-size: 18px
 			color: $accent-color_1
 
+	&-text
+		font-size: 16px
+		font-weight: 500
+		line-height: 30px
+		color: $accent-color_1
+
+		p
+			margin:
+				bottom: 25px
+
+		ul
+			margin: 20px 0
+			list-style-type: none
+
+			li
+				position: relative
+				padding: 
+					left: 15px
+				
+				&:before
+					content: ''
+					display: block
+					position: absolute
+					top: 12px
+					left: 0
+					width: 5px 
+					height: 5px
+					background-color: $accent-color_2
+		
+		a
+			color: $accent-color_2
+			
+			&:hover
+				text-decoration: underline
+
+		&-title
+			margin:
+				bottom: 10px
+			font-weight: 700
+		
+		&-list-elem
+			font-weight: 600
+		
+		&-sublist
+			margin: 10px 0
+
+.tab
+	&-elem
+		display: inline-block
+		position: relative
+		margin:
+			right: -1px
+		padding: 7px 15px 8px 15px
+		font-size: 14px
+		font-weight: 600
+		color: $accent-color_1
+		border: 1px solid #D1D7DA
+		z-index: 0
+		+prefix(transition, $default-transition)
+
+		&:first-child
+			border-top-left-radius: 5px
+			border-bottom-left-radius: 5px
+		
+		&:last-child
+			border-top-right-radius: 5px
+			border-bottom-right-radius: 5px
+
+		&:hover
+			border-color: $accent-color_1
+			z-index: 1
+		
+		&.active
+			background-color: #F5F7F8
+			border-color: $accent-color_2
+			z-index: 2
+
 .breadcrumbs
 	+flex
 	margin:
@@ -121,6 +211,9 @@ a
 	&-elem
 		font-size: 14px
 		color: $accent-color_1
+
+		&:not(:last-child):hover
+			text-decoration: underline
 
 		&::before
 			content: "/"
@@ -135,6 +228,52 @@ a
 		&:last-child
 			color: $font-light-color
 			pointer-events: none
+	
+.checkbox-wrap
+	+flex
+	margin: 0 0 0 auto
+
+	.checkbox
+		display: none
+
+		&-label
+			display: inline-block
+			position: relative
+			padding:
+				left: 42px
+			font-size: 14px
+			color: $accent-color_1
+			cursor: pointer
+			+prefix(transition, $default-transition)
+			user-select: none
+
+			&:before
+				content: ''
+				position: absolute
+				top: 0
+				left: 0
+				width: 32px
+				height: 18px
+				background-color: #ccc
+				border-radius: 18px
+				+prefix(transition, $default-transition)
+
+			&:after
+				content: ''
+				position: absolute
+				top: 2px
+				left: 2px
+				width: 14px
+				height: 14px
+				background-color: $white
+				border-radius: 100%
+				+prefix(transition, $default-transition)
+
+		&:checked + .checkbox-label:before
+			background-color: $accent-color_2
+		
+		&:checked + .checkbox-label:after
+			 transform: translateX(14px)
 
 .media
 	+flex
@@ -196,6 +335,24 @@ a
 		&.time
 			right: 8px
 			bottom: 8px
+
+	&-cross
+		position: absolute
+		top: 10px
+		right: 10px
+		width: 21px 
+		height: 21px
+		background-color: rgba(21, 21, 21, .5)
+		background-image: url(../img/icon/cross-icon.svg)
+		background-size: auto
+		background-position: center center
+		background-repeat: no-repeat
+		border-radius: 100%
+		z-index: 10
+		+prefix(transition, $default-transition)
+
+		&:hover
+			background-color: rgba(21, 21, 21, 1)
 
 	&-name
 		margin:
@@ -325,6 +482,7 @@ a
 			+align-items(center)
 			+prefix(transition, $default-transition)
 			cursor: pointer
+			z-index: 1
 
 			&:hover
 				color: $accent-color_2
@@ -389,6 +547,7 @@ a
 
 	&-share
 		position: relative
+		z-index: 0
 
 		&:hover
 			.video-share-dropdown-wrap
@@ -398,7 +557,7 @@ a
 			display: none
 			
 		&-dropdown
-			min-width: 365px
+			min-width: 380px
 
 			&-social
 				display: inline-block
@@ -456,6 +615,7 @@ a
 
 	&-download
 		position: relative
+		z-index: 0
 
 		&:hover
 			.video-dropdown-wrap
@@ -572,3 +732,312 @@ a
 		font-size: 14px
 		line-height: 25px
 		color: $accent-color_1
+
+.main-form
+	+flex
+	+flex-flow(column)
+	+align-items(flex-start)
+	max-width: 360px
+
+	&-input-wrap
+		position: relative
+		width: 100%
+
+		&::after
+			content: ''
+			display: none
+			position: absolute
+			margin:
+				top: -10px
+			top: 50%
+			right: 20px
+			width: 14px
+			height: 10px 
+			background-image: url(../img/icon/checkmark-icon.svg)
+			background-size: cover 
+			background-position: center center
+			background-repeat: no-repeat
+		
+		&.valid
+			&::after
+				display: block
+				background-image: url(../img/icon/checkmark-icon.svg)
+		
+		&.invalid
+			&::after
+				display: block
+				width: 12px
+				height: 12px
+				background-image: url(../img/icon/cross-red-icon.svg)
+
+	&-input
+		margin:
+			bottom: 10px
+		padding: 15px 20px
+			right: 35px
+		width: 100%
+		font-size: 15px
+		font-weight: 600
+		line-height: 18px
+		color: $accent-color_1
+		border: 1px solid #D1D7DA
+		background-color: #F5F7F8
+		border-radius: 5px
+		+prefix(transition, $default-transition)
+
+		+placeholder()
+			color: #A6B5BB
+		
+		&:focus
+			border-color: $accent-color_2
+			background-color: $white
+
+		&.has-error
+			.main-form-input-wrap
+				&::after
+					display: none
+
+	&-btn
+		display: inline-block
+		position: relative
+		padding: 16px 24px
+		min-width: 104px
+		font-size: 15px
+		font-weight: 600
+		line-height: 18px
+		color: $white
+		border: 0
+		background-color: $accent-color_2
+		border-radius: 5px
+		cursor: pointer
+		+prefix(transition, $default-transition)
+		overflow: hidden
+
+		&:hover
+			background-color: $accent-color_1
+
+		&-wrap
+			+flex
+			margin:
+				top: 5px
+			+align-items(center)
+		
+	&-link
+		display: block
+		margin:
+			left: 20px
+		font-size: 13px
+		line-height: 22px
+		color: $accent-color_2
+		
+		&:hover
+			text-decoration: underline
+
+	&-note
+		margin: 
+			top: 20px
+		max-width: 360px
+		font-size: 13px
+		font-weight: 700
+		line-height: 22px
+		color: $accent-color_1
+
+		span
+			color: $accent-color_2
+
+		p
+			margin:
+				bottom: 10px
+
+	&-success
+		position: relative
+		margin:
+			left: 20px
+		padding:
+			left: 25px
+		font-size: 15px
+		font-weight: 700
+		color: #50AA4B
+
+		&:before
+			content: ''
+			position: absolute
+			top: 4px
+			left: 0
+			width: 15px
+			height: 11px
+			background-image: url(../img/icon/checkmark-grn-icon.svg)
+			background-size: cover
+			background-position: center center
+			background-repeat: no-repeat
+
+
+.social-login
+	margin:
+		bottom: 25px
+
+	&-title
+		margin:
+			top: 20px
+		font-size: 14px
+		font-weight: 600
+		line-height: 22px
+		color: #A6B5BB
+	
+	&-list
+		+flex
+		margin:
+			top: 10px
+
+	&-item
+		+flex
+		position: relative
+		margin:
+			right: 7px
+		padding: 10px
+		width: 39px
+		height: 39px
+		border: 1px solid transparent
+		border-radius: 8px
+		+prefix(transition, $default-transition)
+		cursor: pointer
+		z-index: 1
+
+		&:last-child
+			margin: 0
+			z-index: 0
+
+		svg
+			position: relative
+			margin: auto
+			max-height: 18px
+			z-index: 1
+
+			path
+				+prefix(transition, $default-transition)
+
+		&:hover
+			path,
+			circle
+				fill: $white
+	
+	&-item.social-go
+		border-color: #5085ED
+
+		&:hover
+			background-color: #5085ED
+			
+	&-item.social-od
+		border-color: #D96B2A
+
+		&:hover
+			background-color: #D96B2A
+	
+	&-item.social-vk
+		border-color: #5279A4
+
+		&:hover
+			background-color: #5279A4
+	
+	&-item.social-fb
+		border-color: #405994
+
+		&:hover
+			background-color: #405994
+	
+	&-item.social-mail
+		border-color: #F4AC4C
+
+		&:hover
+			background-color: #F4AC4C
+
+	&-item.social-login-more
+		border-color: #000
+
+		&:hover
+			background-color: #000
+	
+	&-more
+		
+		&:hover
+			.social-login-more-dropdown-wrap
+				display: block
+
+		&-dropdown-wrap
+			display: none 
+			position: absolute
+			padding:
+				top: 65px
+			top: 0
+			right: -15px
+			z-index: 20
+
+		&-dropdown
+			position: relative	
+			padding: 20px
+				right: 30px
+			background-color: $white
+			border: 1px solid #EEEEEE
+			border-radius: 8px
+			+box-shadow(0px 6px 20px rgba(0, 0, 0, 0.1))
+
+			&::before
+				content: ''
+				display: block
+				position: absolute
+				top: -7px
+				right: 27px
+				width: 12px 
+				height: 12px
+				background-color: $white
+				border-top: 1px solid #EEEEEE
+				border-left: 1px solid #EEEEEE
+				+prefix(transform, rotate(45deg))
+
+		&-item
+			+flex
+			margin:
+				bottom: 13px
+			font-size: 14px
+			font-weight: 500
+			color: $accent-color_1
+			line-height: normal
+			+align-items(center)
+
+			&:last-child
+				margin: 0
+
+			&:hover
+				text-decoration: underline
+
+		&-item.social-more-inst
+			.social-login-more-img
+				background-color: #E53E73
+		
+		&-item.social-more-twitter
+			.social-login-more-img
+				background-color: #6AABE9
+
+		&-item.social-more-ya
+			.social-login-more-img
+				background-color: #EC4234
+
+		&-item.social-more-lf
+			.social-login-more-img
+				background-color: #B5291B
+		
+		&-item.social-more-sc
+			.social-login-more-img
+				background-color: #EE6F2D
+
+		&-img
+			+flex
+			margin: 
+				right: 8px
+			width: 24px
+			height: 24px 
+			background-color: lightgray
+			border-radius: 100%
+
+			img
+				margin: auto

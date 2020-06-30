@@ -1,0 +1,104 @@
+.loader
+	margin: 0 auto
+		bottom: 100px
+	max-width: 555px
+	font-size: 15px
+	font-weight: 500
+	line-height: 28px
+	text-align: center
+
+	&-icon
+		position: relative
+		margin: 0 auto
+			bottom: 15px
+		width: 54px
+		height: 54px
+		background-color: #D1D7DA
+		border-radius: 100%
+		+prefix(animation, loading 1.8s linear infinite)
+
+		+keyframes(loading)
+			from
+				+prefix(transform, rotate(0deg))
+			to
+				+prefix(transform, rotate(360deg))
+
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			margin: 
+				top: -21px
+				left: -21px
+			top: 50%
+			left: 50%
+			width: 42px
+			height: 42px
+			background-color: $white
+			border-radius: 100%
+			z-index: 1
+		
+		&:after
+			content: ''
+			position: absolute
+			top: -4px
+			right: -12px
+			width: 54px
+			height: 54px
+			background-image: url(../img/icon/loader-icon.svg)
+			background-size: auto 
+			background-position: center center
+			background-repeat: no-repeat
+			z-index: 1
+	
+	&-value
+		margin:
+			bottom: 10px
+		font-size: 20px
+		font-weight: 600
+		line-height: 28px
+
+	&-progress
+		position: relative
+		margin: 0 auto
+			bottom: 20px
+		width: 100%
+		max-width: 368px
+		height: 3px
+		background-color: #D1D7DA
+
+		&-bar
+			position: absolute
+			top: 0
+			left: 0
+			width: 0%
+			height: 3px
+			background-color: $accent-color_2
+			+prefix(animation, loadingbar 1.8s linear forwards)
+
+			+keyframes(loadingbar)
+				from
+					width: 0%
+				to
+					width: 100%
+
+	&-title
+		font-weight: 700
+
+	&-description
+		color: $font-light-color
+
+	&-btn
+		margin: 0 auto
+			top: 30px
+		font-size: 14px
+		max-width: 192px
+
+	&.generation
+		.loader-title
+			font-weight: 600
+
+			&-name
+				font-weight: 700
+
+	

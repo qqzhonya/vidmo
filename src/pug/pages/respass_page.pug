@@ -1,0 +1,25 @@
+.main-wrapper
+	include ../var/sidebar.pug
+
+	.wrapper
+		.wrapper-box
+			.breadcrumbs
+				a(href="").breadcrumbs-elem Главная 
+				a(href="").breadcrumbs-elem Войти
+				a(href="").breadcrumbs-elem Восстановление пароля
+			
+			.wrapper-row
+				.wrapper-heading
+					span Восстановление пароля
+			
+			.wrapper-row.wrapper-form
+				form(action="").main-form
+					.main-form-input-wrap
+						input(type="text" name="Username" placeholder="Email или логин" minlength="3" required).main-form-input.formUsername
+					.main-form-btn-wrap
+						button.main-form-btn 
+							span Отправить
+						.main-form-success
+							span Успешно отправлено
+
+		include ../var/footer.pug
