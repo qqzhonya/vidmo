@@ -49,7 +49,8 @@ a
 	margin: 0 auto
 		top: 40px
 		bottom: 50px
-	max-width: 1055px
+	padding: 0 15px
+	max-width: 1085px
 
 .wrapper
 	+flex
@@ -207,6 +208,7 @@ a
 	+flex
 	margin:
 		bottom: 15px
+	+flex-wrap(wrap)
 
 	&-elem
 		font-size: 14px
@@ -695,6 +697,7 @@ a
 
 	&-img-box
 		position: relative
+		min-width: 34px
 		width: 34px
 		height: 34px
 		background-image: url(../img/icon/person-icon.svg)
@@ -732,6 +735,28 @@ a
 		font-size: 14px
 		line-height: 25px
 		color: $accent-color_1
+
+	&-video-name
+		position: relative
+		margin:
+			top: 5px
+		padding:
+			left: 28px
+		font-size: 14px
+		font-weight: 600
+
+		&::before
+			content: ''
+			display: inline-block
+			position: absolute
+			top: 2px
+			left: 0
+			width: 21px
+			height: 15px
+			background-image: url(../img/icon/yt-icon.svg)
+			background-size: cover
+			background-position: center center
+			background-repeat: no-repeat
 
 .main-form
 	+flex
@@ -870,7 +895,6 @@ a
 			background-size: cover
 			background-position: center center
 			background-repeat: no-repeat
-
 
 .social-login
 	margin:
@@ -1041,3 +1065,46 @@ a
 
 			img
 				margin: auto
+
+.pagination
+	+flex
+	margin:
+		top: 45px
+	+justify-content(center)
+	+align-items(center)
+
+	&-elem
+		+flex
+		width: 30px
+		height: 30px
+		font-size: 15px
+		line-height: 15px
+		color: $accent-color_1
+		border: 1px solid transparent
+		border-radius: 5px
+		+justify-content(center)
+		+align-items(center)
+		+prefix(transition, $default-transition)
+
+		&:not(.active):hover
+			color: $accent-color_2
+
+	&-elem.active
+		color: $accent-color_1
+		border-color: $accent-color_2
+	
+	&-nav
+		&-icon
+			path
+				+prefix(transition, $default-transition)
+		
+		&:not(.disabled):hover
+			.pagination-nav-icon
+				path
+					stroke: $accent-color_2
+	
+	&-nav.disabled 
+		cursor: default
+		.pagination-nav-icon
+			path
+				stroke: #A6B5BB

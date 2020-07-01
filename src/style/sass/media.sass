@@ -1,0 +1,259 @@
+@media screen and (max-width: 990px)
+	.top-line
+		&-logo
+			margin:
+				left: 0
+		&-input
+			min-width: auto
+	
+	.wrapper
+		margin:
+			left: 15px
+
+		&-heading.four-tab
+			+flex-wrap(wrap)
+
+			.tab
+				margin:
+					top: 20px
+				width: 100%
+				
+				&-elem
+					padding: 10px 3px
+					width: 24%
+					font-size: 13px
+					white-space: nowrap
+					text-align: center
+				
+					&:last-child
+						width: 28%
+			
+			.checkbox-wrap
+				margin: 0 
+					top: 20px
+	
+	.footer
+		+flex-wrap(wrap)
+
+		&-elem
+			margin:
+				bottom: 10px
+
+
+@media screen and (max-width: 771px)
+	.wrapper-sidebar
+		display: none
+
+	.wrapper
+		margin:
+			left: 0
+
+		&-recommend 
+			.media
+				&-elem
+					&:nth-child(3)
+						display: none
+						
+	.media
+		&-elem
+			width: 50%
+
+@media screen and (max-width: 640px)
+	.top-line
+		padding:
+			bottom: 20px
+		&-wrap
+			+flex-wrap(wrap)
+
+		&-logo-wrap
+			order: 1
+
+		&-buttons
+			order: 2
+
+		&-search
+			width: 100%
+			order: 3
+
+		&-language,
+		&-login,
+		&-account
+			display: none
+
+		&-menu-btn
+			display: block
+
+		&-form
+			margin: 0
+				top: 15px
+			width: 100%
+		
+		&-input
+			max-width: 100%
+	
+	.main-wrapper
+		margin:
+			top: 30px
+			bottom: 40px
+
+	.wrapper
+		margin:
+			bottom: 0
+
+		&-box
+			margin:
+				bottom: 50px
+
+	.show-more
+		&:after
+			display: none
+	
+	.cabinet
+		&-header
+			+flex-flow(column)
+			+align-items(center)
+
+		&-info
+			margin:
+				left: 0
+			text-align: center
+
+		&-name
+			font-size: 22px
+			line-height: 27px
+
+		&-tab
+			&-elem
+				margin:
+					right: 10px
+				font-size: 14px
+			 
+	.footer
+		margin: 0
+		+align-items(center)
+		+flex-flow(column)
+
+		&-elem
+			margin: 0
+			line-height: 35px
+
+@media screen and (max-width: 440px)
+	.video
+		&-name
+			font-size: 20px
+
+		&-info
+			+flex-wrap(wrap)
+
+			&-elem
+				width: 100%
+
+				&:nth-child(2)
+					order: 1
+					margin:
+						bottom: 10px
+
+				&:nth-child(1)
+					order: 2
+
+		&-control
+			margin:
+				top: 20px
+			+align-items(flex-start)
+			+flex-wrap(wrap)
+
+			&-elem
+				margin: 0
+					bottom: 20px
+				width: 50%
+
+				&.video-like
+					margin: 0
+			
+		&-download
+			order: 1
+		
+		&-like
+			margin: 0
+			order: 2
+
+		&-share
+			order: 3
+		
+		&-save
+			order: 4
+
+	.comment
+		margin:
+			top: 30px
+		
+		.default-btn
+			width: 100%
+
+		&-section
+			margin:
+				top: 30px
+
+@media screen and (max-width: 420px)
+	.wrapper
+		&-heading
+			font-size: 22px
+			line-height: 27px
+
+		&-heading.two-tab
+			+flex-wrap(wrap)
+
+			.tab
+				margin:
+					top: 20px
+				width: 100%
+
+				&-elem
+					width: 50%
+					text-align: center
+
+		&-recommend 
+			.media
+				&-elem
+					&:nth-child(3)
+						display: none
+
+		&-text
+			font-size: 13px
+			line-height: 20px
+
+	.media
+		&-elem
+			width: 100%
+	
+	.wrapper
+		&-row
+			margin:
+				bottom: 35px
+	
+	.cabinet
+		&-tab
+			+flex
+			+justify-content(space-between)
+	
+	.registrationForm,
+	.resetpasswordForm
+		.main-form
+			&-btn-wrap
+				width: 100%
+				+flex-flow(column)
+			
+			&-btn
+				width: 100%
+
+			&-link-wrap
+				margin:
+					top: 10px
+			
+			&-link
+				margin: 0
+			
+			&-success
+				margin:
+					top: 15px
+					left: 0

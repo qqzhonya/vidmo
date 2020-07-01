@@ -99,6 +99,7 @@
 
 	&-language
 		position: relative
+		z-index: 1
 
 		&:hover
 			.top-line-language-dropdown
@@ -184,6 +185,7 @@
 		background-position: center center
 		background-repeat: no-repeat
 		cursor: pointer
+		z-index: 0
 
 		&::after
 			content: ''
@@ -246,3 +248,49 @@
 
 				&:hover
 					color: $accent-color_2
+	
+	&-menu-btn
+		display: none
+		width: 35px
+
+		span,
+		span:before,
+		span:after
+			display: block
+			position: relative
+			width: 100% 
+			height: 2px
+			background-color: $white
+
+		span
+			&:before,
+			&:after
+				content: ''
+				position: absolute
+				+prefix(transition, $default-transition)
+
+			&:before
+				top: -7px
+				width: 29px
+			
+			&:after
+				bottom: -7px
+				width: 23px
+
+		&.active
+			width: 22px
+			span
+				height: 0
+			
+				&:before,
+				&:after
+					top: auto
+					bottom: auto
+					width: 100%
+					background-color: #A6B5BB
+				
+				&:before 
+					+prefix(transform, rotate(45deg))
+				
+				&:after
+					+prefix(transform, rotate(-45deg))

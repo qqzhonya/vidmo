@@ -97,4 +97,16 @@ $(function() {
 	//
 	// Loader number end 
 	//
+
+	//
+	// Mobile menu
+	//
+
+	$('.top-line-menu-btn').click(function() {
+		$(this).toggleClass('active');
+	});
+
+	//
+	// Mobile menu end
+	//
 });
