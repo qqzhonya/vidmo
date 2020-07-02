@@ -83,6 +83,7 @@
 		font-weight: 600
 		color: $white
 		cursor: pointer
+		+align-items(center)
 		+prefix(transition, $default-transition)
 		z-index: 11
 
@@ -251,18 +252,26 @@
 	
 	&-menu-btn
 		display: none
+		position: relative
 		width: 35px
+		height: 22px
+		+prefix(transition, $default-transition)
+		z-index: 30
 
 		span,
 		span:before,
 		span:after
 			display: block
-			position: relative
-			width: 100% 
+			position: absolute
+			top: 50%
+			left: 50%
+			width: 35px
 			height: 2px
 			background-color: $white
 
 		span
+			margin:
+				left: -18px
 			&:before,
 			&:after
 				content: ''
@@ -270,23 +279,38 @@
 				+prefix(transition, $default-transition)
 
 			&:before
+				margin:
+					left: -17px
 				top: -7px
 				width: 29px
 			
 			&:after
+				margin:
+					left: -17px
+				top: auto
 				bottom: -7px
 				width: 23px
 
 		&.active
-			width: 22px
+			margin:
+				top: -10px
+				right: -10px
+			padding: 10px
+			width: 42px
+			height: 42px
+			border-radius: 100%	
+			background-color: rgba(255, 255, 255, .7)
 			span
 				height: 0
 			
 				&:before,
 				&:after
 					top: auto
+					margin:
+						left: -11px
+					left: 50%
 					bottom: auto
-					width: 100%
+					width: 22px
 					background-color: #A6B5BB
 				
 				&:before 

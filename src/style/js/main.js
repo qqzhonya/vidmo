@@ -104,6 +104,12 @@ $(function() {
 
 	$('.top-line-menu-btn').click(function() {
 		$(this).toggleClass('active');
+
+		if($(this).hasClass('active')) {
+			$('.wrapper-sidebar').fadeIn();
+		} else {
+			$('.wrapper-sidebar').fadeOut();
+		}
 	});
 
 	//

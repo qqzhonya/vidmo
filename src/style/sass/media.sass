@@ -40,25 +40,11 @@
 				bottom: 10px
 
 
-@media screen and (max-width: 771px)
+@media screen and (min-width: 771px)
 	.wrapper-sidebar
-		display: none
+		display: block !important
 
-	.wrapper
-		margin:
-			left: 0
-
-		&-recommend 
-			.media
-				&-elem
-					&:nth-child(3)
-						display: none
-						
-	.media
-		&-elem
-			width: 50%
-
-@media screen and (max-width: 640px)
+@media screen and (max-width: 771px)
 	.top-line
 		padding:
 			bottom: 20px
@@ -90,7 +76,87 @@
 		
 		&-input
 			max-width: 100%
-	
+
+	.wrapper-sidebar
+		display: none
+		position: absolute
+		padding: 0 15px
+		right: 0
+		top: 0
+		width: 100%
+		max-width: 246px
+		height: 100vh
+		z-index: 20
+		background-color: $white
+		overflow: hidden
+		overflow-y: auto
+
+		.sidebar
+			&-elem
+				margin: 0
+				padding: 20px 0px 30px 0
+				min-width: 100%
+				background-color: $white
+				border-radius: 0
+				border-bottom: 1px solid #D1D7DA
+
+				&:last-child
+					border: 0
+			
+			&-btn
+				display: block
+
+			&-language,
+			&-login
+				+flex
+				color: $accent-color_1
+				z-index: 0
+			
+			&-language
+				.top-line-language
+					&-value
+						margin: 0
+					&-text
+						color: $accent-color_1
+
+			&-login
+				margin: 0
+					bottom: 25px
+
+			&-account
+				display: none
+				margin:
+					bottom: 25px
+				z-index: 1
+
+				.top-line-account-dropdown-wrap
+					right: auto
+					left: 0
+				
+				.top-line-account-dropdown
+					&::before
+						right: auto
+						left: 10px
+
+	.wrapper
+		margin:
+			left: 0
+		max-width: 100%
+
+		&-recommend 
+			.media
+				&-elem
+					&:nth-child(3)
+						display: none
+		
+		&-submenu-main
+			display: block
+						
+	.media
+		&-elem
+			width: 50%
+
+@media screen and (max-width: 640px)
 	.main-wrapper
 		margin:
 			top: 30px

@@ -47,7 +47,7 @@ a
 .main-wrapper
 	+flex
 	margin: 0 auto
-		top: 40px
+		top: 38px
 		bottom: 50px
 	padding: 0 15px
 	max-width: 1085px
@@ -61,7 +61,6 @@ a
 	min-height: 100%
 	+flex-direction(column)
 	
-
 	&-box
 		margin:
 			bottom: 60px
@@ -72,7 +71,7 @@ a
 	&-title
 		+flex
 		margin:
-			bottom: 20px
+			bottom: 15px
 		font-size: 20px
 		font-weight: 700
 		line-height: 24px
@@ -117,7 +116,7 @@ a
 
 	&-row
 		margin:
-			bottom: 20px
+			bottom: 26px
 	
 	&-recommend
 		margin:
@@ -173,6 +172,20 @@ a
 		&-sublist
 			margin: 10px 0
 
+	&-submenu-main
+		display: none
+		margin:
+			top: 30px
+
+		.sidebar
+			&-elem
+				margin: 0 auto
+					bottom: 10px
+				max-width: 290px
+
+				&:last-child
+					margin: 0 auto
+
 .tab
 	&-elem
 		display: inline-block
@@ -207,6 +220,7 @@ a
 .breadcrumbs
 	+flex
 	margin:
+		top: 5px
 		bottom: 15px
 	+flex-wrap(wrap)
 
@@ -287,7 +301,7 @@ a
 		display: block
 		position: relative
 		margin:
-			bottom: 25px
+			bottom: 18px
 		padding: 0 5px
 		width: 33.33%
 		cursor: pointer
@@ -366,6 +380,9 @@ a
 
 .show-more
 	position: relative
+	margin:
+		top: 8px
+
 	&::after
 		content: ''
 		display: block
@@ -449,7 +466,7 @@ a
 	&-info
 		+flex
 		margin:
-			top: 25px
+			top: 12px
 
 		&-elem
 			+flex
@@ -474,7 +491,7 @@ a
 	&-control
 		+flex
 		margin:
-			top: 15px
+			top: 20px
 
 		&-elem
 			+flex
@@ -644,7 +661,7 @@ a
 .default-btn
 	display: block
 	margin: 0 0 0 auto
-		top: 15px
+		top: 11px
 	padding: 12px 20px
 	font-size: 14px
 	line-height: 17px
@@ -666,10 +683,15 @@ a
 		margin:
 			top: 15px
 
-	&-title
+	&-heading
+		display: inline-block
 		font-size: 16px
 		font-weight: 600
-		color: $accent-color_1			
+		color: $accent-color_1	
+		+prefix(transition, $default-transition)
+
+		&:hover
+			color: $accent-color_2		
 
 	&-input
 		padding: 15px 20px
@@ -685,12 +707,12 @@ a
 
 	&-section
 		margin:
-			top: 15px
+			top: 12px
 
 	&-elem
 		+flex
 		margin:
-			bottom: 20px
+			bottom: 25px
 
 		&:last-child
 			margin: 0
