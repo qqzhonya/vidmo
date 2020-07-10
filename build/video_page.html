@@ -44,6 +44,7 @@
       </div>
     </header>
     <div class="main-wrapper">
+      <div class="sidebar-bg"></div>
       <aside class="wrapper-sidebar">
         <div class="sidebar-elem sidebar-btn"><a class="top-line-login top-line-btn sidebar-login" href=""><img class="top-line-btn-img" src="style/img/icon/login-accent-icon.svg" alt=""><span class="top-line-btn-text">Войти</span></a>
           <div class="top-line-account sidebar-account"><img src="" alt="">
@@ -352,16 +353,11 @@
       video.controls = false; 
       
       function play_pause() {
-      	if (play_pause_status == "pause") {
-      		video.play();
-      		play_pause_status = "play";
-      		$('.video-play-btn').fadeOut();
-      		video.controls = true; 
-      	}
-      	else {
-      		video.pause();
-      		play_pause_status = "pause";
-      	}
+      	video.play();
+      	play_pause_status = "play";
+      	$('.video-play-btn').fadeOut();
+      	video.controls = true; 
+      	console.log('hi');
       }
     </script>
     <script src="./style/js/plugin/jquery-3.4.1.min.js"></script>

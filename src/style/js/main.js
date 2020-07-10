@@ -20,8 +20,6 @@ $(function() {
 		var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
 		return re.test(email);
 	}
-	
-	// validateEmail($('formEmail'));
 
 	var $this = $('.main-form-input');
 	var thisForm = $this.closest('form');
@@ -56,8 +54,6 @@ $(function() {
 		});
 		return isValid;
 	}
-
-	
 
 	$('body').on('input', '.main-form-input', function(e) {
 		e.preventDefault();
@@ -106,11 +102,22 @@ $(function() {
 		$(this).toggleClass('active');
 
 		if($(this).hasClass('active')) {
+			$('.sidebar-bg').fadeIn();
 			$('.wrapper-sidebar').fadeIn();
+			$('body').addClass('menu-active');
 		} else {
+			$('.sidebar-bg').fadeOut();
 			$('.wrapper-sidebar').fadeOut();
+			$('body').removeClass('menu-active');
 		}
 	});
+
+	$('.sidebar-bg').click(function() {
+		$(this).fadeOut()
+		$('.top-line-menu-btn').removeClass('active');
+		$('.wrapper-sidebar').fadeOut();
+		$('body').removeClass('menu-active');
+	})
 
 	//
 	// Mobile menu end
